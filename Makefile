@@ -1,3 +1,5 @@
+all: build start
+
 build:
 	docker build -t amestofortytwo/blog --force-rm -f ./Dockerfile .
 
