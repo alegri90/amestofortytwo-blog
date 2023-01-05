@@ -97,14 +97,18 @@ Ready to post? Then you need to do a pull request. Look at the link from beginni
 
 Prerequisites:
 
-- Make, if you want to execute the commands via the Makefile
-- Docker to build and run the container
+- Automated with `GNU Make`, if you want to execute the commands via the `Makefile`
+- `Docker` is used to build and run the GatsbyJS server
 
+Currently there are two options for testing locally, and you'll need at least `Docker` installed to get a working Gatsby build and runtime prepared for you. 
+But to simplify for ease-of-use, if you have `GNU Make` installed as well, you'll get the best workflow.
+
+Just running the `make` command in the repo root directory will create a build container for GatsbyJS, and then start the finish container afterwards.
 ```sh
-make build start
+make
 ```
 
-If you do not have Make and only wish to use Docker; you can run these commands individually.
+If you do not have `GNU Make` and only wish to use `Docker`; you can run these commands individually.
 
 ```sh
 # Build the container
@@ -114,4 +118,4 @@ docker build -t amestofortytwo/blog --force-rm -f ./Dockerfile .
 docker run --rm -p 80:80 amestofortytwo/blog
 ```
 
-Once built and started, go to localhost in your browser.
+Once built and started, go to `localhost` in your browser and you should see the blog-site from your local build.
